@@ -19,12 +19,12 @@
 
 import os
 import platform
-import shutil
+import shutil #module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal
 import time
 from datetime import datetime
-from functools import wraps
+from functools import wraps #When you use a decorator, you're replacing one function with another.
 from pathlib import Path
-from signal import SIGINT, signal
+from signal import SIGINT, signal #Set handlers for asynchronous events
 
 import click
 

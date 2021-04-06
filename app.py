@@ -18,7 +18,7 @@
 #      https://github.com/Hari-Nagarajan/fairgame
 import os
 import hashlib
-from common.license_hash import license_hash
+from common.license_hash import license_hash #this means that it imports from license_hash.py from the common folder
 
 
 def sha256sum(filename):
@@ -31,7 +31,7 @@ def sha256sum(filename):
     return h.hexdigest()
 
 
-if os.path.exists("LICENSE") and sha256sum("LICENSE") in license_hash:
+if os.path.exists("LICENSE") and sha256sum("LICENSE") in license_hash: #checks license file matches hash
     s = """
     FairGame Copyright (C) 2021 Hari Nagarajan
         This program comes with ABSOLUTELY NO WARRANTY; for details
@@ -57,7 +57,10 @@ def notfound_message(exception):
 
 
 try:
-    from cli import cli
+    from cli import cli 
+    #from cli in this case is a package (which is still like a regular module); a package typically corresponds to 
+    # a file directory containing Python files and other directories. To create a Python package yourself, 
+    # you create a directory and a file named __init__.py inside it. The __init__.py file contains the contents of the package when it’s treated as a module. It can be left empty.
 except ModuleNotFoundError as e:
     notfound_message(e)
     exit(0)
