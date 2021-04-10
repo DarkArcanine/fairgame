@@ -74,7 +74,7 @@ def notify_on_crash(func):
 
 @click.group()
 def main():
-    pass
+    pass ## class definitions cannot be empty, but if you for some reason have a class definition with no content, put in the pass statement to avoid getting an error. https://www.w3schools.com/python/python_classes.asp
 
 
 # @click.command()
