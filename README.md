@@ -1,4 +1,4 @@
-# FairGame
+# FairGame README
 
 # Table of Contents:
 * [About FairGame](#About-FairGame)
@@ -31,7 +31,8 @@
     
 
 # Quick Links
- [Discord](https://discord.gg/4rfbNKrmnC) | [Python Download (3.8.8)](https://www.python.org/downloads/release/python-388/)
+ * [Discord](https://discord.gg/4rfbNKrmnC) **DO NOT ASK QUESTIONS IN DISCORD BEFORE READING THIS DOCUMENT**
+ * [Python Download (3.8.8)](https://www.python.org/downloads/release/python-388/)
 
 # About FairGame
 
@@ -98,6 +99,7 @@ dependencies in other operating systems:
    
    ![Config Folder](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/step5a.png)
    
+   **Ignore extra files in this folder. Screenshot is based on development files. Just follow instructions as written!**
    ![Copy template](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/Step5b.png)
    
 6. Edit the amazon_config.json, this assumes US using smile.amazon.com. Using Amazon Smile requires that you select
@@ -129,12 +131,14 @@ dependencies in other operating systems:
 8. Verify that the bot successfully makes it to the place your order page with the item you put in the config file. 
    If it does not, then:
    * You messed something up above, and need to fix it; or,
-   * It is asking you for your address and payment info. In a separate tab within the bots browser, you need to:
-     * Make sure one-click purchasing is set up for your account in the bot's browser, 
-     * verify there is a default payment method and default address associated with that payment method,
-     * And then make a purchase manually with the bot in a separate tab and verify that it correctly sets your 
-       defaults for the browser. 
+   * If it is asking you for your address and payment info, you need to do all of the following in a separate
+     tab within the bots browser:
+     * Make sure one-click purchasing is set up for your account, 
+     * Verify there is a default payment method and default address associated with that payment method,
+     * And then make a purchase manually in that separate tab of the bot's browser and verify that it 
+       correctly sets your defaults for the browser. 
      * See [#faq on our Discord](https://discord.gg/GEsarYKMAw) for additional information.
+     * ALSO see notes regarding EU and [current functionality](#Other-Notes-on-Functionality)
 9. Edit the `amazon_config.json` file with the item(s) you want to look for. See [Configuration](#Configuration) 
    and [Configuration Examples](#Configuration-Examples) for additional information
 10. Remove `--test` from `_Amazon.bat`
@@ -376,7 +380,7 @@ Credential file password: <enter the previously created password>
 ## Other Installation Help
 
 ### ASINs
-See (#asins)[https://discord.gg/DuVXAN5FnN] channel on our Discord server, or look them up on Amazon.
+See [#asins](https://discord.gg/DuVXAN5FnN) channel on our Discord server, or look them up on Amazon.
 
 ### Platform Specific
 
@@ -452,10 +456,10 @@ Edit the newly created files with your settings based on your [configuration](#c
 
 #### Installation Raspberry Pi 4 (2 GB+)
 
-This is an abridged version of the community created document by UnidentifiedWarlock and Judarius.  It can be 
-found [here](https://docs.google.com/document/d/1VUxXhATZ8sZOJxdh3AIY6OGqwLRmrAcPikKZAwphIE8/edit). If the steps here
-don't work on your Pi 4, look there for additional options. This hasn't been tested on a Pi 3, but given enough RAM to
-run Chrome, it may very well work. Let us know. 
+This is an abridged version of the community created document by UnidentifiedWarlock and Judarius (link to this
+document can be found at end of this section, however you should **follow the README directions first!**). If the 
+README steps don't work on your Pi 4, look at that document for additional options. This hasn't been tested
+on a Pi 3, but given enough RAM to run Chrome, it may very well work. Let us know. 
 
 ```shell
 sudo apt update
@@ -502,6 +506,8 @@ to
 Then save and close the file.
 
 Back in the terminal you kept open, under the fairgame folder you can now type `pipenv run python app.py amazon` and run the bot, or add any flags after you wish to use like `--headless` or `--delay x` to make `pipenv run python app.py amazon --headless --delay 4`
+
+Basis for the above directions can be found [here](https://docs.google.com/document/d/1VUxXhATZ8sZOJxdh3AIY6OGqwLRmrAcPikKZAwphIE8/edit)
 
 # Advanced Configuration 
 ## Notifications
@@ -600,7 +606,7 @@ set PIPENV_VENV_IN_PROJECT=1 (Windows)
 export PIPENV_VENV_IN_PROJECT=1 (Linux/Other)
 ```
 
-* Running the bot minimized can cause time out errors due to how Selenium acts with various versions of Chrome. 
+* Running the bot's Chrome browser minimized can cause time out errors due to how Selenium acts with various versions of Chrome. 
 
 * One time passcode (OTP) doesn't work in headless. Turn it off when starting up a headless instance, then turn 
   it back on afterwords.
